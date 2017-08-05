@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Columns;
+﻿using System;
+using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Reports;
 using BenchmarkDotNet.Running;
 
@@ -13,10 +14,14 @@ namespace DotNetPerf.Infrastructure.Columns
             _column = column;
         }
 
-        public string GetValue(Summary summary, Benchmark benchmark)
+        public string GetValue(Summary summary, Benchmark benchmark) => GetValue(_column.GetValue(summary, benchmark));
+
+        public string GetValue(Summary summary, Benchmark benchmark, ISummaryStyle style) =>
+            GetValue(_column.GetValue(summary, benchmark, style));
+
+        private static string GetValue(string value)
         {
-            var value = _column.GetValue(summary, benchmark);
-            var firstSeparatorIndex = value.IndexOf("_");
+            var firstSeparatorIndex = value.IndexOf("_", StringComparison.InvariantCulture);
             if (firstSeparatorIndex <= 0)
             {
                 return value;
@@ -31,6 +36,10 @@ namespace DotNetPerf.Infrastructure.Columns
         public bool AlwaysShow => _column.AlwaysShow;
         public ColumnCategory Category => _column.Category;
         public int PriorityInCategory => _column.PriorityInCategory;
+        public bool IsNumeric => _column.IsNumeric;
+        public UnitType UnitType => _column.UnitType;
+        public string Legend => _column.Legend;
+
         public bool IsAvailable(Summary summary) => _column.IsAvailable(summary);
         public bool IsDefault(Summary summary, Benchmark benchmark) => _column.IsDefault(summary, benchmark);
     }

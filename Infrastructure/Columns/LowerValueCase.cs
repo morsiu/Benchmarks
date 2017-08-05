@@ -18,7 +18,16 @@ namespace DotNetPerf.Infrastructure.Columns
         public bool AlwaysShow => _column.AlwaysShow;
         public ColumnCategory Category => _column.Category;
         public int PriorityInCategory => _column.PriorityInCategory;
-        public string GetValue(Summary summary, Benchmark benchmark) => _column.GetValue(summary, benchmark).ToLowerInvariant();
+        public bool IsNumeric => _column.IsNumeric;
+        public UnitType UnitType => _column.UnitType;
+        public string Legend => _column.Legend;
+
+        public string GetValue(Summary summary, Benchmark benchmark) =>
+            _column.GetValue(summary, benchmark).ToLowerInvariant();
+
+        public string GetValue(Summary summary, Benchmark benchmark, ISummaryStyle style) =>
+            _column.GetValue(summary, benchmark, style);
+        
         public bool IsAvailable(Summary summary) => _column.IsAvailable(summary);
         public bool IsDefault(Summary summary, Benchmark benchmark) => _column.IsDefault(summary, benchmark);
     }
