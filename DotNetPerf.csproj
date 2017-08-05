@@ -160,6 +160,10 @@
   <ItemGroup>
     <Compile Include="Benchmarks\Equals_on_value_types.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStruct.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructWithClass.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructWithStruct.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\Class.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsWithInputAndOutputInClasses.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsWithInputAndOutputInParameters.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsWithInputAndOutputInStructures.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\Structure.cs" />
