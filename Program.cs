@@ -7,7 +7,8 @@ namespace DotNetPerf
     {
         public static void Main(string[] args)
         {
-            BenchmarkRunner.Run<Equals_on_value_types>();
+            //BenchmarkRunner.Run<Logic_packaging__for_many_structure_parameters>();
+            BenchmarkRunner.Run<Logic_packaging__for_one_parameter>();
         }
     }
 }
