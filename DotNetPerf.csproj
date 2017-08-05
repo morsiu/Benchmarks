@@ -161,6 +161,8 @@
     <Compile Include="Benchmarks\Equals_on_value_types.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStruct.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsWithInputAndOutputInParameters.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsWithInputAndOutputInStructures.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\Structure.cs" />
     <Compile Include="Benchmarks\LogicPackaging\LogicPackagingBenchmark.cs" />
     <Compile Include="Benchmarks\Logic_packaging__for_many_structure_parameters.cs" />
     <Compile Include="Benchmarks\Logic_packaging__for_one_parameter.cs" />

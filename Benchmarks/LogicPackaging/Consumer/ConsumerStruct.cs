@@ -20,18 +20,30 @@ namespace DotNetPerf.Benchmarks.LogicPackaging.Consumer
             _isNotEmpty = true;
         }
 
-        public ConsumerStruct<T> Intersect(ConsumerStruct<T> other)
+        public ConsumerStruct<T> IntersectUsingStaticMethodWithParameters(ConsumerStruct<T> other)
         {
-            if (!_isNotEmpty || other._isNotEmpty)
-            {
-                return new ConsumerStruct<T>();
-            }
+            if (!_isNotEmpty || other._isNotEmpty) return new ConsumerStruct<T>();
             StaticMethodsWithInputAndOutputInParameters.Intersect(
                 _start, _hasOpenStart, _end, _hasOpenEnd,
                 other._start, other._hasOpenStart, other._end, other._hasOpenEnd,
                 out var resultStart, out var resultHasOpenStart, out var resultEnd, out var resultHasOpenEnd,
                 Comparer<T>.Default);
             return new ConsumerStruct<T>(resultStart, resultHasOpenStart, resultEnd, resultHasOpenEnd);
+        }
+        
+        public ConsumerStruct<T> IntersectUsingStaticMethodWithStructures(ConsumerStruct<T> other)
+        {
+            if (!_isNotEmpty || other._isNotEmpty) return new ConsumerStruct<T>();
+            var result =
+                StaticMethodsWithInputAndOutputInStructures.Intersect(
+                    new Structure<T>(_start, _hasOpenStart, _end, _hasOpenEnd),
+                    new Structure<T>(other._start, other._hasOpenStart, other._end, other._hasOpenEnd),
+                    Comparer<T>.Default);
+            return result != null
+                ? new ConsumerStruct<T>(
+                    result.Value.Start, result.Value.HasOpenStart,
+                    result.Value.End, result.Value.HasOpenEnd)
+                : new ConsumerStruct<T>();
         }
     }
 }

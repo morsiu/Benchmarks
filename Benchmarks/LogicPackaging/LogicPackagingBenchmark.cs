@@ -20,9 +20,15 @@ namespace DotNetPerf.Benchmarks.LogicPackaging
         }
         
         [Benchmark]
-        public ConsumerStruct<DateTime> StaticLogic_consumed_by_ConsumerStruct()
+        public ConsumerStruct<DateTime> Static_method_using_parameters_consumed_by_ConsumerStruct()
         {
-            return _left.Intersect(_right);
+            return _left.IntersectUsingStaticMethodWithParameters(_right);
+        }
+        
+        [Benchmark]
+        public ConsumerStruct<DateTime> Static_method_using_structures_consumed_by_ConsumerStruct()
+        {
+            return _left.IntersectUsingStaticMethodWithStructures(_right);
         }
         
         public sealed class Config : ManualConfig
