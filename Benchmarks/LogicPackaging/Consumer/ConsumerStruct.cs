@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DotNetPerf.Benchmarks.LogicPackaging.Library;
 
 namespace DotNetPerf.Benchmarks.LogicPackaging.Consumer
@@ -43,6 +44,21 @@ namespace DotNetPerf.Benchmarks.LogicPackaging.Consumer
                 ? new ConsumerStruct<T>(
                     result.Value.Start, result.Value.HasOpenStart,
                     result.Value.End, result.Value.HasOpenEnd)
+                : new ConsumerStruct<T>();
+        }
+
+        public ConsumerStruct<T> IntersectUsingStaticMethodWithClasses(ConsumerStruct<T> other)
+        {
+            if (!_isNotEmpty || other._isNotEmpty) return new ConsumerStruct<T>();
+            var result =
+                StaticMethodsWithInputAndOutputInClasses.Intersect(
+                    new Class<T>(_start, _hasOpenStart, _end, _hasOpenEnd),
+                    new Class<T>(other._start, other._hasOpenStart, other._end, other._hasOpenEnd),
+                    Comparer<T>.Default);
+            return result != null
+                ? new ConsumerStruct<T>(
+                    result.Start, result.HasOpenStart,
+                    result.End, result.HasOpenEnd)
                 : new ConsumerStruct<T>();
         }
     }

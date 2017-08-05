@@ -40,13 +40,19 @@ namespace DotNetPerf.Benchmarks.LogicPackaging
         }
         
         [Benchmark]
+        public ConsumerStruct<DateTime> Static_method_using_classes_consumed_by_ConsumerStruct()
+        {
+            return _leftStruct.IntersectUsingStaticMethodWithClasses(_rightStruct);
+        }
+        
+        [Benchmark]
         public ConsumerStructWithStruct<DateTime> Static_method_using_structures_consumed_by_ConsumerWithStruct()
         {
             return _leftStructWithStruct.IntersectUsingStaticMethodWithStructures(_rightStructWithStruct);
         }
         
         [Benchmark]
-        public ConsumerStructWithClass<DateTime> Static_method_using_structures_consumed_by_ConsumerWithClass()
+        public ConsumerStructWithClass<DateTime> Static_method_using_classes_consumed_by_ConsumerWithClass()
         {
             return _leftStructWithClass.IntersectUsingStaticMethodWithStructures(_rightStructWithClass);
         }
