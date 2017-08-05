@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace DotNetPerf.Benchmarks.LogicPackaging
+namespace DotNetPerf.Benchmarks.LogicPackaging.Library
 {
-    public static class StaticLogic
+    public static class StaticMethodsWithInputAndOutputInParameters
     {
         public static bool Intersect<T>(
             T leftStart, bool leftHasOpenStart, T leftEnd, bool leftHasOpenEnd,

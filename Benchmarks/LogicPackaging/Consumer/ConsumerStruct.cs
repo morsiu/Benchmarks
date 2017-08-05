@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using DotNetPerf.Benchmarks.LogicPackaging.Library;
 
-namespace DotNetPerf.Benchmarks.LogicPackaging
+namespace DotNetPerf.Benchmarks.LogicPackaging.Consumer
 {
     public struct ConsumerStruct<T>
     {
@@ -25,7 +26,7 @@ namespace DotNetPerf.Benchmarks.LogicPackaging
             {
                 return new ConsumerStruct<T>();
             }
-            StaticLogic.Intersect(
+            StaticMethodsWithInputAndOutputInParameters.Intersect(
                 _start, _hasOpenStart, _end, _hasOpenEnd,
                 other._start, other._hasOpenStart, other._end, other._hasOpenEnd,
                 out var resultStart, out var resultHasOpenStart, out var resultEnd, out var resultHasOpenEnd,
