@@ -1,66 +1,73 @@
 ﻿using System;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Jobs;
 using DotNetPerf.Benchmarks.LogicPackaging.Consumer;
+using DotNetPerf.Infrastructure.Columns;
 
 namespace DotNetPerf.Benchmarks.LogicPackaging
 {
     [Config(typeof(Config))]
     public class LogicPackagingBenchmark
     {
-        private ConsumerStruct<DateTime> _leftStruct;
-        private ConsumerStruct<DateTime> _rightStruct;
-        private ConsumerStructWithStruct<DateTime> _leftStructWithStruct;
-        private ConsumerStructWithStruct<DateTime> _rightStructWithStruct;
-        private ConsumerStructWithClass<DateTime> _leftStructWithClass;
-        private ConsumerStructWithClass<DateTime> _rightStructWithClass;
+        private ConsumerStructureWithInlineData<DateTime> _leftInlineStructure;
+        private ConsumerStructureWithInlineData<DateTime> _rightInlineStructure;
+        private ConsumerStructuctureWithStructure<DateTime> _leftStructureStructure;
+        private ConsumerStructuctureWithStructure<DateTime> _rightStructureStructure;
+        private ConsumerStructureWithClass<DateTime> _leftClassStructure;
+        private ConsumerStructureWithClass<DateTime> _rightClassStructure;
 
         public void Setup()
         {
-            _leftStruct = new ConsumerStruct<DateTime>(new DateTime(2000, 1, 10), false, new DateTime(2000, 1, 20), true);
-            _rightStruct = new ConsumerStruct<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
-            _leftStructWithStruct = new ConsumerStructWithStruct<DateTime>(new DateTime(2000, 1, 10), false, new DateTime(2000, 1, 20), true);
-            _rightStructWithStruct = new ConsumerStructWithStruct<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
-            _leftStructWithClass = new ConsumerStructWithClass<DateTime>(new DateTime(2000, 1, 10), false, new DateTime(2000, 1, 20), true);
-            _rightStructWithClass = new ConsumerStructWithClass<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
+            _leftInlineStructure = new ConsumerStructureWithInlineData<DateTime>(new DateTime(2000, 1, 10), false, new DateTime(2000, 1, 20), true);
+            _rightInlineStructure = new ConsumerStructureWithInlineData<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
+            _leftStructureStructure = new ConsumerStructuctureWithStructure<DateTime>(new DateTime(2000, 1, 10), false, new DateTime(2000, 1, 20), true);
+            _rightStructureStructure = new ConsumerStructuctureWithStructure<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
+            _leftClassStructure = new ConsumerStructureWithClass<DateTime>(new DateTime(2000, 1, 10), false, new DateTime(2000, 1, 20), true);
+            _rightClassStructure = new ConsumerStructureWithClass<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
         }
         
         [Benchmark]
-        public ConsumerStruct<DateTime> Static_method_using_parameters_consumed_by_ConsumerStruct()
+        public ConsumerStructureWithInlineData<DateTime> Structure__with__inline__store_communicating_with__static_method__inline()
         {
-            return _leftStruct.IntersectUsingStaticMethodWithParameters(_rightStruct);
+            return _leftInlineStructure.IntersectUsingStaticMethodWithParameters(_rightInlineStructure);
         }
         
         [Benchmark]
-        public ConsumerStruct<DateTime> Static_method_using_structures_consumed_by_ConsumerStruct()
+        public ConsumerStructureWithInlineData<DateTime> Structure__with__inline__store_communicating_with__static_method__with_structures()
         {
-            return _leftStruct.IntersectUsingStaticMethodWithStructures(_rightStruct);
+            return _leftInlineStructure.IntersectUsingStaticMethodWithStructures(_rightInlineStructure);
         }
         
         [Benchmark]
-        public ConsumerStruct<DateTime> Static_method_using_classes_consumed_by_ConsumerStruct()
+        public ConsumerStructureWithInlineData<DateTime> Structure__with__inline__store_communicating_with__static_method__with_classes()
         {
-            return _leftStruct.IntersectUsingStaticMethodWithClasses(_rightStruct);
+            return _leftInlineStructure.IntersectUsingStaticMethodWithClasses(_rightInlineStructure);
         }
         
         [Benchmark]
-        public ConsumerStructWithStruct<DateTime> Static_method_using_structures_consumed_by_ConsumerWithStruct()
+        public ConsumerStructuctureWithStructure<DateTime> Structure__with__structure__store_communicating_with__static_method__with_structures()
         {
-            return _leftStructWithStruct.IntersectUsingStaticMethodWithStructures(_rightStructWithStruct);
+            return _leftStructureStructure.IntersectUsingStaticMethodWithStructures(_rightStructureStructure);
         }
         
         [Benchmark]
-        public ConsumerStructWithClass<DateTime> Static_method_using_classes_consumed_by_ConsumerWithClass()
+        public ConsumerStructureWithClass<DateTime> Structure__with__class__store_communicating_with__static_method__with_classes()
         {
-            return _leftStructWithClass.IntersectUsingStaticMethodWithStructures(_rightStructWithClass);
+            return _leftClassStructure.IntersectUsingStaticMethodWithStructures(_rightClassStructure);
         }
         
         public sealed class Config : ManualConfig
         {
             public Config()
             {
+                var separators = new[] {"__with__", "__store_communicating_with__", "__"};
+                Add(new ChangeId("Consumer", new TagColumn("Consumer", name => new ColumnName(name).NthToken(0, separators))));
+                Add(new ChangeId("Consumer store", new TagColumn("Consumer store", name => new ColumnName(name).NthToken(1, separators))));
+                Add(new ChangeId("Library", new TagColumn("Library", name => new ColumnName(name).NthToken(2, separators))));
+                Add(new ChangeId("Communication", new TagColumn("Communication", name => new ColumnName(name).NthToken(3, separators))));
                 Add(new MemoryDiagnoser());
                 Add(Job.LegacyJitX86);
                 Add(Job.LegacyJitX64);

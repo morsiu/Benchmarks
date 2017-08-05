@@ -2,7 +2,7 @@
 
 namespace DotNetPerf.Benchmarks.LogicPackaging.Library
 {
-    public static class StaticMethodsWithInputAndOutputInParameters
+    public static class StaticMethodsCommunicatingInline
     {
         public static bool Intersect<T>(
             T leftStart, bool leftHasOpenStart, T leftEnd, bool leftHasOpenEnd,

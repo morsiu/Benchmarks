@@ -159,13 +159,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Benchmarks\Equals_on_value_types.cs" />
-    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStruct.cs" />
-    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructWithClass.cs" />
-    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructWithStruct.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithInlineData.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithClass.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructuctureWithStructure.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\Class.cs" />
-    <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsWithInputAndOutputInClasses.cs" />
-    <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsWithInputAndOutputInParameters.cs" />
-    <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsWithInputAndOutputInStructures.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingWithClasses.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingInline.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingWithStructures.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\Structure.cs" />
     <Compile Include="Benchmarks\LogicPackaging\LogicPackagingBenchmark.cs" />
     <Compile Include="Benchmarks\Logic_packaging__for_many_structure_parameters.cs" />
