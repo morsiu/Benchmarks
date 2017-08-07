@@ -159,10 +159,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Benchmarks\Equals_on_value_types.cs" />
+    <Compile Include="Benchmarks\HigherOrderOverhead\BranchOverhead.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithGenericData.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithInlineData.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithClass.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructuctureWithStructure.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\Class.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\IData.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\StaticGenericMethodsConstrainedToInterface.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingWithClasses.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingInline.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingWithStructures.cs" />
@@ -173,6 +177,7 @@
     <Compile Include="Infrastructure\Columns\LowerValueCase.cs" />
     <Compile Include="Infrastructure\Columns\SingularizeValue.cs" />
     <Compile Include="Infrastructure\Columns\ColumnName.cs" />
+    <Compile Include="Infrastructure\OverheadConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\Columns\ChangeId.cs" />

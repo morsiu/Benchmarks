@@ -3,6 +3,8 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
+using BenchmarkDotNet.Exporters;
+using BenchmarkDotNet.Exporters.Csv;
 using BenchmarkDotNet.Jobs;
 using DotNetPerf.Benchmarks.LogicPackaging.Consumer;
 using DotNetPerf.Infrastructure.Columns;
@@ -18,6 +20,8 @@ namespace DotNetPerf.Benchmarks.LogicPackaging
         private ConsumerStructuctureWithStructure<DateTime> _rightStructureStructure;
         private ConsumerStructureWithClass<DateTime> _leftClassStructure;
         private ConsumerStructureWithClass<DateTime> _rightClassStructure;
+        private ConsumerStructureWithGenericData<DateTime> _leftGenericStructure;
+        private ConsumerStructureWithGenericData<DateTime> _rightGenericStructure;
 
         public void Setup()
         {
@@ -27,6 +31,8 @@ namespace DotNetPerf.Benchmarks.LogicPackaging
             _rightStructureStructure = new ConsumerStructuctureWithStructure<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
             _leftClassStructure = new ConsumerStructureWithClass<DateTime>(new DateTime(2000, 1, 10), false, new DateTime(2000, 1, 20), true);
             _rightClassStructure = new ConsumerStructureWithClass<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
+            _leftGenericStructure = new ConsumerStructureWithGenericData<DateTime>(new DateTime(2000, 1, 10), false, new DateTime(2000, 1, 20), true);
+            _rightGenericStructure = new ConsumerStructureWithGenericData<DateTime>(new DateTime(2000, 1, 15), false, new DateTime(2000, 1, 25), false);
         }
         
         [Benchmark]
@@ -58,6 +64,12 @@ namespace DotNetPerf.Benchmarks.LogicPackaging
         {
             return _leftClassStructure.IntersectUsingStaticMethodWithStructures(_rightClassStructure);
         }
+
+        [Benchmark]
+        public ConsumerStructureWithGenericData<DateTime> Structure__with__generic_data__store_communicating_with__static_generic_method__with_classes()
+        {
+            return _leftGenericStructure.IntersectUsingStaticGenericMethodWithClasses(_rightGenericStructure);
+        }
         
         public sealed class Config : ManualConfig
         {
@@ -69,9 +81,11 @@ namespace DotNetPerf.Benchmarks.LogicPackaging
                 Add(new ChangeId("Library", new TagColumn("Library", name => new ColumnName(name).NthToken(2, separators))));
                 Add(new ChangeId("Communication", new TagColumn("Communication", name => new ColumnName(name).NthToken(3, separators))));
                 Add(new MemoryDiagnoser());
-                Add(Job.LegacyJitX86);
+                Add(RPlotExporter.Default);
+                Add(CsvMeasurementsExporter.Default);
+                //Add(Job.LegacyJitX86);
                 Add(Job.LegacyJitX64);
-                Add(Job.RyuJitX64);
+                //Add(Job.RyuJitX64);
             }
         }
     }

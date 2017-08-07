@@ -5,7 +5,7 @@ namespace DotNetPerf.Benchmarks.LogicPackaging.Consumer
 {
     public struct ConsumerStructuctureWithStructure<T>
     {
-        private readonly Structure<T>? _structure;
+        private Structure<T>? _structure;
 
         public ConsumerStructuctureWithStructure(T start, bool hasOpenStart, T end, bool hasOpenEnd)
         {
