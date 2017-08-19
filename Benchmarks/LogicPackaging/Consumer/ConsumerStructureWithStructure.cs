@@ -3,24 +3,24 @@ using DotNetPerf.Benchmarks.LogicPackaging.Library;
 
 namespace DotNetPerf.Benchmarks.LogicPackaging.Consumer
 {
-    public struct ConsumerStructuctureWithStructure<T>
+    public struct ConsumerStructureWithStructure<T>
     {
         private Structure<T>? _structure;
 
-        public ConsumerStructuctureWithStructure(T start, bool hasOpenStart, T end, bool hasOpenEnd)
+        public ConsumerStructureWithStructure(T start, bool hasOpenStart, T end, bool hasOpenEnd)
         {
             _structure = new Structure<T>(start, hasOpenStart, end, hasOpenEnd);
         }
 
-        private ConsumerStructuctureWithStructure(Structure<T>? structure)
+        private ConsumerStructureWithStructure(Structure<T>? structure)
         {
             _structure = structure;
         }
         
-        public ConsumerStructuctureWithStructure<T> IntersectUsingStaticMethodWithStructures(ConsumerStructuctureWithStructure<T> other)
+        public ConsumerStructureWithStructure<T> IntersectUsingStaticMethodWithStructures(ConsumerStructureWithStructure<T> other)
         {
-            if (_structure == null || other._structure == null) return new ConsumerStructuctureWithStructure<T>();
-            return new ConsumerStructuctureWithStructure<T>(
+            if (_structure == null || other._structure == null) return new ConsumerStructureWithStructure<T>();
+            return new ConsumerStructureWithStructure<T>(
                 StaticMethodsCommunicatingWithStructures.Intersect(
                     _structure.Value,
                     other._structure.Value,
