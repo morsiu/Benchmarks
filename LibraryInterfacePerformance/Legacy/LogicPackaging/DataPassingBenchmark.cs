@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
-using LibraryInterfacePerformance.LogicPackaging.Consumer;
+using LibraryInterfacePerformance.Legacy.LogicPackaging.Consumer;
 
-namespace LibraryInterfacePerformance.LogicPackaging
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging
 {
     [Config(typeof(BaseConfig))]
     public class DataPassingBenchmark

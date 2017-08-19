@@ -1,4 +1,4 @@
-﻿namespace LibraryInterfacePerformance.LogicPackaging.Library
+﻿namespace LibraryInterfacePerformance.Legacy.LogicPackaging.Library
 {
     public struct Structure<T>
     {

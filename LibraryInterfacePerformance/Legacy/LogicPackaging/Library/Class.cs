@@ -1,4 +1,4 @@
-﻿namespace LibraryInterfacePerformance.LogicPackaging.Library
+﻿namespace LibraryInterfacePerformance.Legacy.LogicPackaging.Library
 {
     public sealed class Class<T>
     {

@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Running;
-using LibraryInterfacePerformance.LogicPackaging;
+using LibraryInterfacePerformance.Legacy;
+using LibraryInterfacePerformance.Legacy.LogicPackaging;
 
 namespace LibraryInterfacePerformance
 {

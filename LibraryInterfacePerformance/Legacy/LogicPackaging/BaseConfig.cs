@@ -3,7 +3,7 @@ using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Exporters.Csv;
 using BenchmarkDotNet.Jobs;
 
-namespace LibraryInterfacePerformance.LogicPackaging
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging
 {
     public class BaseConfig : ManualConfig
     {

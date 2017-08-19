@@ -3,7 +3,7 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Jobs;
 
-namespace LibraryInterfacePerformance
+namespace LibraryInterfacePerformance.Legacy
 {
     [Config(typeof(Config))]
     public class Logic_packaging__for_one_parameter

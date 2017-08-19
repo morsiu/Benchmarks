@@ -3,9 +3,9 @@ using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Columns;
 using BenchmarkDotNetTools.Columns;
-using LibraryInterfacePerformance.LogicPackaging.Consumer;
+using LibraryInterfacePerformance.Legacy.LogicPackaging.Consumer;
 
-namespace LibraryInterfacePerformance.LogicPackaging
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging
 {
     [Config(typeof(Config))]
     public class LogicPackagingBenchmark

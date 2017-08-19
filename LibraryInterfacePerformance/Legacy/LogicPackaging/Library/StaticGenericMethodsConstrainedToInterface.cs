@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibraryInterfacePerformance.LogicPackaging.Library
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging.Library
 {
     public static class StaticGenericMethodsConstrainedToInterface
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using LibraryInterfacePerformance.LogicPackaging.Library;
+using LibraryInterfacePerformance.Legacy.LogicPackaging.Library;
 
-namespace LibraryInterfacePerformance.LogicPackaging.Consumer
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging.Consumer
 {
     public struct ConsumerStructureWithGenericData<T>
         where T : IComparable<T>

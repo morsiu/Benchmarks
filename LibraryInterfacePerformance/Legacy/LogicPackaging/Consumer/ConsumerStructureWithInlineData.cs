@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using LibraryInterfacePerformance.LogicPackaging.Library;
+using LibraryInterfacePerformance.Legacy.LogicPackaging.Library;
 
-namespace LibraryInterfacePerformance.LogicPackaging.Consumer
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging.Consumer
 {
     public struct ConsumerStructureWithInlineData<T>
         where T : IComparable<T>

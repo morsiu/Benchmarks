@@ -144,24 +144,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogicPackaging\BaseConfig.cs" />
-    <Compile Include="LogicPackaging\Consumer\ConsumerStructureWithClass.cs" />
-    <Compile Include="LogicPackaging\Consumer\ConsumerStructureWithGenericData.cs" />
-    <Compile Include="LogicPackaging\Consumer\ConsumerStructureWithInlineData.cs" />
-    <Compile Include="LogicPackaging\Consumer\ConsumerStructureWithStructure.cs" />
-    <Compile Include="LogicPackaging\DataPassingBenchmark.cs" />
-    <Compile Include="LogicPackaging\Library\Class.cs" />
-    <Compile Include="LogicPackaging\Library\ClassWithMethods.cs" />
-    <Compile Include="LogicPackaging\Library\IData.cs" />
-    <Compile Include="LogicPackaging\Library\StaticGenericMethodsConstrainedToInterface.cs" />
-    <Compile Include="LogicPackaging\Library\StaticMethodsCommunicatingInline.cs" />
-    <Compile Include="LogicPackaging\Library\StaticMethodsCommunicatingWithClasses.cs" />
-    <Compile Include="LogicPackaging\Library\StaticMethodsCommunicatingWithStructures.cs" />
-    <Compile Include="LogicPackaging\Library\Structure.cs" />
-    <Compile Include="LogicPackaging\Library\StructureWithMethods.cs" />
-    <Compile Include="LogicPackaging\LogicPackagingBenchmark.cs" />
-    <Compile Include="Logic_packaging__for_many_structure_parameters.cs" />
-    <Compile Include="Logic_packaging__for_one_parameter.cs" />
+    <Compile Include="Legacy\LogicPackaging\BaseConfig.cs" />
+    <Compile Include="Legacy\LogicPackaging\Consumer\ConsumerStructureWithClass.cs" />
+    <Compile Include="Legacy\LogicPackaging\Consumer\ConsumerStructureWithGenericData.cs" />
+    <Compile Include="Legacy\LogicPackaging\Consumer\ConsumerStructureWithInlineData.cs" />
+    <Compile Include="Legacy\LogicPackaging\Consumer\ConsumerStructureWithStructure.cs" />
+    <Compile Include="Legacy\LogicPackaging\DataPassingBenchmark.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\Class.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\ClassWithMethods.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\IData.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\StaticGenericMethodsConstrainedToInterface.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\StaticMethodsCommunicatingInline.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\StaticMethodsCommunicatingWithClasses.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\StaticMethodsCommunicatingWithStructures.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\Structure.cs" />
+    <Compile Include="Legacy\LogicPackaging\Library\StructureWithMethods.cs" />
+    <Compile Include="Legacy\LogicPackaging\LogicPackagingBenchmark.cs" />
+    <Compile Include="Legacy\Logic_packaging__for_many_structure_parameters.cs" />
+    <Compile Include="Legacy\Logic_packaging__for_one_parameter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

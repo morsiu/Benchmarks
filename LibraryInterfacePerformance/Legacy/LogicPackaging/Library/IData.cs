@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibraryInterfacePerformance.LogicPackaging.Library
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging.Library
 {
     public interface IData<out T, TData, TDataFactory>
         where T : IComparable<T>

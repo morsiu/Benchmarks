@@ -1,8 +1,8 @@
 using System;
 
-namespace LibraryInterfacePerformance.LogicPackaging.Library
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging.Library
 {
-    public sealed class ClassWithMethods<T>
+    public struct StructureWithMethods<T>
         where T : IComparable<T>
     {
         public T Start { get; }
@@ -10,7 +10,7 @@ namespace LibraryInterfacePerformance.LogicPackaging.Library
         public T End { get; }
         public bool HasOpenEnd { get; }
 
-        public ClassWithMethods(T start, bool hasOpenStart, T end, bool hasOpenEnd)
+        public StructureWithMethods(T start, bool hasOpenStart, T end, bool hasOpenEnd)
         {
             Start = start;
             HasOpenStart = hasOpenStart;
@@ -18,8 +18,8 @@ namespace LibraryInterfacePerformance.LogicPackaging.Library
             HasOpenEnd = hasOpenEnd;
         }
         
-        public ClassWithMethods<T> Intersect(
-            ClassWithMethods<T> right)
+        public StructureWithMethods<T>? Intersect(
+            StructureWithMethods<T> right)
         {
             if (!IntersectsWith(right))
             {
@@ -28,7 +28,7 @@ namespace LibraryInterfacePerformance.LogicPackaging.Library
             var leftStartToRightStart = Start.CompareTo(right.Start);
             var leftEndToRightEnd = End.CompareTo(right.End);
             return
-                new ClassWithMethods<T>(
+                new StructureWithMethods<T>(
                     leftStartToRightStart > 0 ? Start : right.Start,
                     leftStartToRightStart == 0
                         ? HasOpenStart || right.HasOpenStart
@@ -44,7 +44,7 @@ namespace LibraryInterfacePerformance.LogicPackaging.Library
         }
         
         public bool IntersectsWith(
-            ClassWithMethods<T> right)
+            StructureWithMethods<T> right)
         {
             if (Start.CompareTo(right.End) > 0) return false;
             if (End.CompareTo(right.Start) < 0) return false;

@@ -1,12 +1,12 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace LibraryInterfacePerformance.LogicPackaging.Library
+namespace LibraryInterfacePerformance.Legacy.LogicPackaging.Library
 {
-    public static class StaticMethodsCommunicatingWithClasses
+    public static class StaticMethodsCommunicatingWithStructures
     {
-        public static Class<T> Intersect<T>(
-            Class<T> left,
-            Class<T> right,
+        public static Structure<T>? Intersect<T>(
+            Structure<T> left,
+            Structure<T> right,
             IComparer<T> comparer)
         {
             if (!IntersectsWith(left, right, comparer))
@@ -16,7 +16,7 @@ namespace LibraryInterfacePerformance.LogicPackaging.Library
             var leftStartToRightStart = comparer.Compare(left.Start, right.Start);
             var leftEndToRightEnd = comparer.Compare(left.End, right.End);
             return
-                new Class<T>(
+                new Structure<T>(
                     leftStartToRightStart > 0 ? left.Start : right.Start,
                     leftStartToRightStart == 0
                         ? left.HasOpenStart || right.HasOpenStart
@@ -32,8 +32,8 @@ namespace LibraryInterfacePerformance.LogicPackaging.Library
         }
         
         public static bool IntersectsWith<T>(
-            Class<T> left,
-            Class<T> right,
+            Structure<T> left,
+            Structure<T> right,
             IComparer<T> comparer)
         {
             if (comparer.Compare(left.Start, right.End) > 0) return false;
