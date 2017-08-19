@@ -160,10 +160,12 @@
   <ItemGroup>
     <Compile Include="Benchmarks\Equals_on_value_types.cs" />
     <Compile Include="Benchmarks\HigherOrderOverhead\BranchOverhead.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\BaseConfig.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithGenericData.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithInlineData.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithClass.cs" />
-    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructuctureWithStructure.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithStructure.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\DataPassingBenchmark.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\Class.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\IData.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticGenericMethodsConstrainedToInterface.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingInline.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingWithStructures.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\Structure.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\StructureWithMethods.cs" />
     <Compile Include="Benchmarks\LogicPackaging\LogicPackagingBenchmark.cs" />
     <Compile Include="Benchmarks\Logic_packaging__for_many_structure_parameters.cs" />
     <Compile Include="Benchmarks\Logic_packaging__for_one_parameter.cs" />
