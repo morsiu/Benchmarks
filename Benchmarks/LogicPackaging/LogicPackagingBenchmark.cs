@@ -88,6 +88,24 @@ namespace DotNetPerf.Benchmarks.LogicPackaging
                 _leftGenericStructure[i].IntersectUsingStaticGenericMethodWithClasses(_rightGenericStructure[i]);
             }
         }
+        
+        [Benchmark]
+        public void Structure__with__inline__store_communicating_with__instance_method__with_structures()
+        {
+            for (var i = 0; i < Count; i++)
+            {
+                _leftInlineStructure[i].IntersectUsingInstanceMethodWithStructures(_rightInlineStructure[i]);
+            }
+        }
+        
+        [Benchmark]
+        public void Structure__with__inline__store_communicating_with__instance_method__with_classes()
+        {
+            for (var i = 0; i < Count; i++)
+            {
+                _leftInlineStructure[i].IntersectUsingInstanceMethodWithClasses(_rightInlineStructure[i]);
+            }
+        }
 
         public sealed class Config : BaseConfig
         {

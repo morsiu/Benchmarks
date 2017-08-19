@@ -2,7 +2,7 @@ using System;
 
 namespace DotNetPerf.Benchmarks.LogicPackaging.Library
 {
-    public struct StructureWithMethods<T>
+    public sealed class ClassWithMethods<T>
         where T : IComparable<T>
     {
         public T Start { get; }
@@ -10,7 +10,7 @@ namespace DotNetPerf.Benchmarks.LogicPackaging.Library
         public T End { get; }
         public bool HasOpenEnd { get; }
 
-        public StructureWithMethods(T start, bool hasOpenStart, T end, bool hasOpenEnd)
+        public ClassWithMethods(T start, bool hasOpenStart, T end, bool hasOpenEnd)
         {
             Start = start;
             HasOpenStart = hasOpenStart;
@@ -18,8 +18,8 @@ namespace DotNetPerf.Benchmarks.LogicPackaging.Library
             HasOpenEnd = hasOpenEnd;
         }
         
-        public StructureWithMethods<T>? Intersect(
-            StructureWithMethods<T> right)
+        public ClassWithMethods<T> Intersect(
+            ClassWithMethods<T> right)
         {
             if (!IntersectsWith(right))
             {
@@ -28,7 +28,7 @@ namespace DotNetPerf.Benchmarks.LogicPackaging.Library
             var leftStartToRightStart = Start.CompareTo(right.Start);
             var leftEndToRightEnd = End.CompareTo(right.End);
             return
-                new StructureWithMethods<T>(
+                new ClassWithMethods<T>(
                     leftStartToRightStart > 0 ? Start : right.Start,
                     leftStartToRightStart == 0
                         ? HasOpenStart || right.HasOpenStart
@@ -44,7 +44,7 @@ namespace DotNetPerf.Benchmarks.LogicPackaging.Library
         }
         
         public bool IntersectsWith(
-            StructureWithMethods<T> right)
+            ClassWithMethods<T> right)
         {
             if (Start.CompareTo(right.End) > 0) return false;
             if (End.CompareTo(right.Start) < 0) return false;

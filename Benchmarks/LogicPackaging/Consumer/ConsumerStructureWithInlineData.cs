@@ -5,6 +5,7 @@ using DotNetPerf.Benchmarks.LogicPackaging.Library;
 namespace DotNetPerf.Benchmarks.LogicPackaging.Consumer
 {
     public struct ConsumerStructureWithInlineData<T>
+        where T : IComparable<T>
     {
         private readonly T _start;
         private readonly bool _hasOpenStart;
@@ -59,6 +60,28 @@ namespace DotNetPerf.Benchmarks.LogicPackaging.Consumer
                 ? new ConsumerStructureWithInlineData<T>(
                     result.Start, result.HasOpenStart,
                     result.End, result.HasOpenEnd)
+                : new ConsumerStructureWithInlineData<T>();
+        }
+
+        public ConsumerStructureWithInlineData<T> IntersectUsingInstanceMethodWithStructures(ConsumerStructureWithInlineData<T> other)
+        {
+            if (!_isNotEmpty || other._isNotEmpty) return new ConsumerStructureWithInlineData<T>();
+            var result =
+                new StructureWithMethods<T>(_start, _hasOpenStart, _end, _hasOpenEnd).Intersect(
+                    new StructureWithMethods<T>(other._start, other._hasOpenStart, other._end, other._hasOpenEnd));
+            return result != null
+                ? new ConsumerStructureWithInlineData<T>(result.Value.Start,  result.Value.HasOpenStart, result.Value.End, result.Value.HasOpenEnd)
+                : new ConsumerStructureWithInlineData<T>();
+        }
+        
+        public ConsumerStructureWithInlineData<T> IntersectUsingInstanceMethodWithClasses(ConsumerStructureWithInlineData<T> other)
+        {
+            if (!_isNotEmpty || other._isNotEmpty) return new ConsumerStructureWithInlineData<T>();
+            var result =
+                new ClassWithMethods<T>(_start, _hasOpenStart, _end, _hasOpenEnd).Intersect(
+                    new ClassWithMethods<T>(other._start, other._hasOpenStart, other._end, other._hasOpenEnd));
+            return result != null
+                ? new ConsumerStructureWithInlineData<T>(result.Start,  result.HasOpenStart, result.End, result.HasOpenEnd)
                 : new ConsumerStructureWithInlineData<T>();
         }
     }

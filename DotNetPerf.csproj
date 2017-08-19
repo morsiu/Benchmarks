@@ -167,6 +167,7 @@
     <Compile Include="Benchmarks\LogicPackaging\Consumer\ConsumerStructureWithStructure.cs" />
     <Compile Include="Benchmarks\LogicPackaging\DataPassingBenchmark.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\Class.cs" />
+    <Compile Include="Benchmarks\LogicPackaging\Library\ClassWithMethods.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\IData.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticGenericMethodsConstrainedToInterface.cs" />
     <Compile Include="Benchmarks\LogicPackaging\Library\StaticMethodsCommunicatingWithClasses.cs" />
