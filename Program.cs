@@ -11,7 +11,8 @@ namespace DotNetPerf
         {
             //BenchmarkRunner.Run<Logic_packaging__for_many_structure_parameters>();
             //BenchmarkRunner.Run<Logic_packaging__for_one_parameter>();
-            BenchmarkRunner.Run<LogicPackagingBenchmark>();
+            //BenchmarkRunner.Run<LogicPackagingBenchmark>();
+            BenchmarkRunner.Run<DataPassingBenchmark>();
             //BenchmarkRunner.Run<BranchOverhead>();
         }
     }
