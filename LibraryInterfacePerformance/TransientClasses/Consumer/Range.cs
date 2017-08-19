@@ -28,9 +28,10 @@ namespace LibraryInterfacePerformance.TransientClasses.Consumer
             Implementation().IntersectsWith(other.Implementation());
 
         public Range<T> Intersect(Range<T> other) =>
-            !Empty && !other.Empty
-                ? new Range<T>()
-                : Interface(Implementation().Intersect(other.Implementation()));
+            Interface(Implementation().Intersect(other.Implementation()));
+
+        public Range<T> Span(Range<T> other) =>
+            Interface(Implementation().Span(other.Implementation()));
         
         private Impl.Range<T> Implementation() =>
             !Empty

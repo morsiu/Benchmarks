@@ -60,6 +60,22 @@ namespace LibraryInterfacePerformance.TransientClasses.Library
             if (endToOtherStart == 0) return !OpenEnd && !other.OpenStart;
             return true;
         }
+        
+        public Range<T> Span(Range<T> other)
+        {
+            if (Empty || other.Empty) return new Range<T>();
+            var startToOtherStart = Start.CompareTo(other.Start);
+            var endToOtherEnd = End.CompareTo(End);
+            return new Range<T>(
+                startToOtherStart  < 0 ? Start : other.Start,
+                startToOtherStart  == 0 
+                    ? OpenStart && other.OpenStart
+                    : startToOtherStart  < 0 ? OpenStart : other.OpenStart,
+                endToOtherEnd > 0 ? End : other.End,
+                endToOtherEnd == 0
+                    ? OpenEnd && other.OpenEnd
+                    : endToOtherEnd > 0 ? OpenEnd : other.OpenEnd);
+        }
 
         private readonly State _state;
 
