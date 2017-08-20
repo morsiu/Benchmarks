@@ -3,7 +3,7 @@ using Impl = LibraryInterfacePerformance.TransientClasses.Library;
 
 namespace LibraryInterfacePerformance.TransientClasses.Consumer
 {
-    public struct Range<T>
+    public struct Range<T> : IRange<T, Range<T>>
         where T : IComparable<T>
     {
         public T Start { get; }

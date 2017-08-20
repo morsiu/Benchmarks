@@ -3,7 +3,7 @@ using Impl = LibraryInterfacePerformance.StaticMethods.Library;
 
 namespace LibraryInterfacePerformance.StaticMethods.Consumer
 {
-    public struct Range<T>
+    public struct Range<T> : IRange<T, Range<T>>
         where T : IComparable<T>
     {
         public T Start { get; }
@@ -20,7 +20,6 @@ namespace LibraryInterfacePerformance.StaticMethods.Consumer
                 (openEnd ? State.OpenEnd : State.None);
         }
 
-        public bool Empty => (_state & State.NonEmpty) == 0;
         public bool OpenStart => (_state & State.OpenStart) != 0;
         public bool OpenEnd => (_state & State.OpenEnd) != 0;
 

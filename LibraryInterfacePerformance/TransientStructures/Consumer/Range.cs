@@ -3,7 +3,7 @@ using Impl = LibraryInterfacePerformance.TransientStructures.Library;
 
 namespace LibraryInterfacePerformance.TransientStructures.Consumer
 {
-    public struct Range<T>
+    public struct Range<T> : IRange<T, Range<T>>
         where T : IComparable<T>
     {
         public T Start { get; }
@@ -48,5 +48,15 @@ namespace LibraryInterfacePerformance.TransientStructures.Consumer
             OpenEnd = 2,
             NonEmpty = 4
         }
+    }
+
+    public struct Ranges<T> : IRanges<T, Range<T>>
+        where T : IComparable<T>
+    {
+        public Range<T> EmptyRange() =>
+            new Range<T>();
+
+        public Range<T> Range(T start, bool openStart, T end, bool openEnd) =>
+            new Range<T>(start, openStart, end, openEnd);
     }
 }

@@ -3,7 +3,7 @@ using Impl = LibraryInterfacePerformance.DurableGenerics.Library;
 
 namespace LibraryInterfacePerformance.DurableGenerics.Consumer
 {
-    public struct Range<T> : Impl.IRange<T>
+    public struct Range<T> : Impl.IRange<T>, IRange<T, Range<T>>
         where T : IComparable<T>
     {
         public T Start { get; }

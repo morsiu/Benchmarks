@@ -3,7 +3,7 @@ using Impl = LibraryInterfacePerformance.StaticMethodsUsingStructures.Library;
 
 namespace LibraryInterfacePerformance.StaticMethodsUsingStructures.Consumer
 {
-    public struct Range<T>
+    public struct Range<T> : IRange<T, Range<T>>
         where T : IComparable<T>
     {
         private Impl.Range<T> _impl;
@@ -12,9 +12,6 @@ namespace LibraryInterfacePerformance.StaticMethodsUsingStructures.Consumer
         {
             _impl = new Impl.Range<T>(start, openStart, end, openEnd);
         }
-
-        public bool OpenStart => _impl.OpenStart;
-        public bool OpenEnd => _impl.OpenEnd;
 
         public bool IntersectsWith(Range<T> other) =>
             Impl.RangeOperations.IntersectsWith(

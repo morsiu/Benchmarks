@@ -1,9 +1,9 @@
 ﻿using System;
-using LibraryInterfacePerformance.DurableGenerics.Library;
+using Impl = LibraryInterfacePerformance.DurableGenerics.Library;
 
 namespace LibraryInterfacePerformance.DurableGenerics.Consumer
 {
-    public struct Ranges<T> : IRanges<T, Range<T>>
+    public struct Ranges<T> : Impl.IRanges<T, Range<T>>, IRanges<T, Range<T>>
         where T : IComparable<T>
     {
         public Range<T> Range(T start, bool openStart, T end, bool openEnd)
