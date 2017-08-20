@@ -152,7 +152,7 @@
     <Compile Include="DurableGenerics\Library\IRange.cs" />
     <Compile Include="DurableGenerics\Library\IRanges.cs" />
     <Compile Include="DurableGenerics\Library\RangeOperations.cs" />
-    <Compile Include="BenchmarksesOfAnApproach.cs" />
+    <Compile Include="BenchmarkOfAnApproach.cs" />
     <Compile Include="IAllBenchmarks.cs" />
     <Compile Include="IRanges.cs" />
     <Compile Include="RandomRanges.cs" />

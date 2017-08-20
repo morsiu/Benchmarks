@@ -36,27 +36,27 @@ namespace LibraryInterfacePerformance
             switch (approachName)
             {
                 case "DurableGenerics":
-                    return new BenchmarksesOfAnApproach<
+                    return new BenchmarkOfAnApproach<
                             DurableGenerics.Consumer.Range<int>,
                             DurableGenerics.Consumer.Ranges<int>>(
                         rangeCount, new DurableGenerics.Consumer.Ranges<int>());
                 case "StaticMethods":
-                    return new BenchmarksesOfAnApproach<
+                    return new BenchmarkOfAnApproach<
                             StaticMethods.Consumer.Range<int>,
                             StaticMethods.Consumer.Ranges<int>>(
                         rangeCount, new StaticMethods.Consumer.Ranges<int>());
                 case "StaticMethodsUsingStructures":
-                    return new BenchmarksesOfAnApproach<
+                    return new BenchmarkOfAnApproach<
                             StaticMethodsUsingStructures.Consumer.Range<int>,
                             StaticMethodsUsingStructures.Consumer.Ranges<int>>(
                         rangeCount, new StaticMethodsUsingStructures.Consumer.Ranges<int>());
                 case "TransientClasses":
-                    return new BenchmarksesOfAnApproach<
+                    return new BenchmarkOfAnApproach<
                             TransientClasses.Consumer.Range<int>,
                             TransientClasses.Consumer.Ranges<int>>(
                         rangeCount, new TransientClasses.Consumer.Ranges<int>());
                 case "TransientStructures": 
-                    return new BenchmarksesOfAnApproach<
+                    return new BenchmarkOfAnApproach<
                             TransientStructures.Consumer.Range<int>,
                             TransientStructures.Consumer.Ranges<int>>(
                         rangeCount, new TransientStructures.Consumer.Ranges<int>());

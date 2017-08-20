@@ -2,13 +2,13 @@
 
 namespace LibraryInterfacePerformance
 {
-    public sealed class BenchmarksesOfAnApproach<TRange, TRanges> : IAllBenchmarks where TRange : IRange<int, TRange>    
+    public sealed class BenchmarkOfAnApproach<TRange, TRanges> : IAllBenchmarks where TRange : IRange<int, TRange>    
         where TRanges : IRanges<int, TRange>
     {
         private readonly RangeIntersectionBenchmark<int, TRange> _rangeIntersectionBenchmark;
         private readonly DoRangesIntersectBenchmark<int, TRange> _doRangesIntersectBenchmark;
 
-        public BenchmarksesOfAnApproach(int rangeCount, TRanges ranges)
+        public BenchmarkOfAnApproach(int rangeCount, TRanges ranges)
         {
             var randomRanges = new RandomRanges<TRange, TRanges>(ranges);
             var firstList = randomRanges.Take(rangeCount).ToArray();
