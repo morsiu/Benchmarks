@@ -46,26 +46,22 @@ namespace LibraryInterfacePerformance
 
         private sealed class RandomRanges : IEnumerable<Range<int>>
         {
-            private readonly Random _random1 = new Random(1);
-            private readonly Random _random2 = new Random(2);
-            private readonly Random _random3 = new Random(3);
-            private readonly Random _random4 = new Random(4);
-            private readonly Random _random5 = new Random(5);
+            private readonly Random _random = new Random(1);
             
             public IEnumerator<Range<int>> GetEnumerator()
             {
                 while (true)
                 {
-                    if (_random1.NextDouble() > 0.01)
+                    if (_random.NextDouble() > 0.01)
                     {
-                        var start = _random2.Next(0, int.MaxValue - 1);
-                        var end = _random3.Next(start + 1);
+                        var start = _random.Next(0, int.MaxValue - 1);
+                        var end = _random.Next(start + 1);
                         yield return
                             new Range<int>(
                                 start,
-                                _random4.NextDouble() > 0.5,
+                                _random.NextDouble() > 0.5,
                                 end,
-                                _random5.NextDouble() > 0.5);
+                                _random.NextDouble() > 0.5);
                     }
                     else
                     {
