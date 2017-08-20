@@ -1,6 +1,4 @@
 ﻿using BenchmarkDotNet.Running;
-using LibraryInterfacePerformance.Legacy;
-using LibraryInterfacePerformance.Legacy.LogicPackaging;
 
 namespace LibraryInterfacePerformance
 {
@@ -8,7 +6,7 @@ namespace LibraryInterfacePerformance
     {
         public static void Main(string[] args)
         {
-            BenchmarkRunner.Run<DurableGenericsBenchmark>();
+            BenchmarkRunner.Run<StaticMethodsUsingStructuresBenchmark>();
         }
     }
 }

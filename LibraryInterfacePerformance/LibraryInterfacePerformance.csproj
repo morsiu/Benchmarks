@@ -171,9 +171,19 @@
     <Compile Include="Legacy\Logic_packaging__for_one_parameter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticMethodsBenchmark.cs" />
+    <Compile Include="StaticMethodsUsingStructures\Consumer\Range.cs" />
+    <Compile Include="StaticMethodsUsingStructures\Library\Range.cs" />
+    <Compile Include="StaticMethodsUsingStructures\Library\RangeOperations.cs" />
+    <Compile Include="StaticMethodsUsingStructuresBenchmark.cs" />
+    <Compile Include="StaticMethods\Consumer\Range.cs" />
+    <Compile Include="StaticMethods\Library\RangeOperations.cs" />
     <Compile Include="TransientClassesBenchmark.cs" />
     <Compile Include="TransientClasses\Consumer\Range.cs" />
     <Compile Include="TransientClasses\Library\Range.cs" />
+    <Compile Include="TransientStructures\Consumer\Range.cs" />
+    <Compile Include="TransientStructures\Library\Range.cs" />
+    <Compile Include="TransientStruturesBenchmark.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
