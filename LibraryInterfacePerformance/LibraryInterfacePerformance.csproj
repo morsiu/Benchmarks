@@ -144,7 +144,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApproachesBenchmarks.cs" />
+    <Compile Include="BenchmarkOfAllApproaches.cs" />
     <Compile Include="BenchmarkConfig.cs" />
     <Compile Include="DoRangesIntersectBenchmark.cs" />
     <Compile Include="DurableGenerics\Consumer\Range.cs" />
@@ -152,8 +152,8 @@
     <Compile Include="DurableGenerics\Library\IRange.cs" />
     <Compile Include="DurableGenerics\Library\IRanges.cs" />
     <Compile Include="DurableGenerics\Library\RangeOperations.cs" />
-    <Compile Include="ApproachBenchmarks.cs" />
-    <Compile Include="IApproachBenchmarks.cs" />
+    <Compile Include="BenchmarksesOfAnApproach.cs" />
+    <Compile Include="IAllBenchmarks.cs" />
     <Compile Include="IRanges.cs" />
     <Compile Include="RandomRanges.cs" />
     <Compile Include="RangeIntersectionBenchmark.cs" />

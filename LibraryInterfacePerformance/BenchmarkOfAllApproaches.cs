@@ -4,9 +4,9 @@ using BenchmarkDotNet.Attributes;
 namespace LibraryInterfacePerformance
 {
     [Config(typeof(BenchmarkConfig))]
-    public class ApproachesBenchmarks
+    public class BenchmarkOfAllApproaches
     {
-        private IApproachBenchmarks _approachBenchmarks;
+        private IAllBenchmarks _allBenchmarks;
         
         [Params("DurableGenerics", "StaticMethods", "StaticMethodsUsingStructures", "TransientClasses", "TransientStructures")]
         public string ApproachName { get; set; }
@@ -16,47 +16,47 @@ namespace LibraryInterfacePerformance
         [GlobalSetup]
         public void GlobalSetup()
         {
-            _approachBenchmarks = ApproachBenchmarks(ApproachName, Count);
+            _allBenchmarks = ApproachBenchmarks(ApproachName, Count);
         }
 
         [Benchmark(OperationsPerInvoke = Count)]
         public void RangeIntersection()
         {
-            _approachBenchmarks.RangeIntersection();
+            _allBenchmarks.RangeIntersection();
         }
 
         [Benchmark(OperationsPerInvoke = Count)]
         public bool DoRangesIntersect()
         {
-            return _approachBenchmarks.DoRangesIntersect();
+            return _allBenchmarks.DoRangesIntersect();
         }
 
-        private IApproachBenchmarks ApproachBenchmarks(string approachName, int rangeCount)
+        private IAllBenchmarks ApproachBenchmarks(string approachName, int rangeCount)
         {
             switch (approachName)
             {
                 case "DurableGenerics":
-                    return new ApproachBenchmarks<
+                    return new BenchmarksesOfAnApproach<
                             DurableGenerics.Consumer.Range<int>,
                             DurableGenerics.Consumer.Ranges<int>>(
                         rangeCount, new DurableGenerics.Consumer.Ranges<int>());
                 case "StaticMethods":
-                    return new ApproachBenchmarks<
+                    return new BenchmarksesOfAnApproach<
                             StaticMethods.Consumer.Range<int>,
                             StaticMethods.Consumer.Ranges<int>>(
                         rangeCount, new StaticMethods.Consumer.Ranges<int>());
                 case "StaticMethodsUsingStructures":
-                    return new ApproachBenchmarks<
+                    return new BenchmarksesOfAnApproach<
                             StaticMethodsUsingStructures.Consumer.Range<int>,
                             StaticMethodsUsingStructures.Consumer.Ranges<int>>(
                         rangeCount, new StaticMethodsUsingStructures.Consumer.Ranges<int>());
                 case "TransientClasses":
-                    return new ApproachBenchmarks<
+                    return new BenchmarksesOfAnApproach<
                             TransientClasses.Consumer.Range<int>,
                             TransientClasses.Consumer.Ranges<int>>(
                         rangeCount, new TransientClasses.Consumer.Ranges<int>());
                 case "TransientStructures": 
-                    return new ApproachBenchmarks<
+                    return new BenchmarksesOfAnApproach<
                             TransientStructures.Consumer.Range<int>,
                             TransientStructures.Consumer.Ranges<int>>(
                         rangeCount, new TransientStructures.Consumer.Ranges<int>());

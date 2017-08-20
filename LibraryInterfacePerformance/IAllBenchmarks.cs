@@ -1,6 +1,6 @@
 ﻿namespace LibraryInterfacePerformance
 {
-    public interface IApproachBenchmarks
+    public interface IAllBenchmarks
     {
         bool DoRangesIntersect();
         void RangeIntersection();

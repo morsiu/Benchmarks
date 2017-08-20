@@ -6,7 +6,7 @@ namespace LibraryInterfacePerformance
     {
         public static void Main(string[] args)
         {
-            BenchmarkRunner.Run<ApproachesBenchmarks>();
+            BenchmarkRunner.Run<BenchmarkOfAllApproaches>();
         }
     }
 }
