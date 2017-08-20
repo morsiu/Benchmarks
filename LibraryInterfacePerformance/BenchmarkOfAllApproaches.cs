@@ -8,7 +8,7 @@ namespace LibraryInterfacePerformance
     {
         private IAllBenchmarks _allBenchmarks;
         
-        [Params("DurableGenerics", "StaticMethods", "StaticMethodsUsingStructures", "TransientClasses", "TransientStructures")]
+        [Params("DurableGenerics", "MutableGenerics", "StaticMethods", "StaticMethodsUsingStructures", "TransientClasses", "TransientStructures")]
         public string ApproachName { get; set; }
 
         public const int Count = 1_000_000;
@@ -40,6 +40,11 @@ namespace LibraryInterfacePerformance
                             DurableGenerics.Consumer.Range<int>,
                             DurableGenerics.Consumer.Ranges<int>>(
                         rangeCount, new DurableGenerics.Consumer.Ranges<int>());
+                case "MutableGenerics":
+                    return new BenchmarkOfAnApproach<
+                            StructuresToStaticGenericMethodsByInterfaces.Consumer.Range<int>,
+                            StructuresToStaticGenericMethodsByInterfaces.Consumer.Ranges<int>>(
+                        rangeCount, new StructuresToStaticGenericMethodsByInterfaces.Consumer.Ranges<int>());
                 case "StaticMethods":
                     return new BenchmarkOfAnApproach<
                             StaticMethods.Consumer.Range<int>,

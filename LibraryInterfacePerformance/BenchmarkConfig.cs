@@ -10,8 +10,8 @@ namespace LibraryInterfacePerformance
         {
             Add(MemoryDiagnoser.Default);
             Add(Job.RyuJitX64);
-            Add(Job.LegacyJitX64);
-            Add(Job.LegacyJitX86);
+            //Add(Job.LegacyJitX64);
+            //Add(Job.LegacyJitX86);
         }
     }
 }

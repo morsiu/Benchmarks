@@ -155,6 +155,11 @@
     <Compile Include="BenchmarkOfAnApproach.cs" />
     <Compile Include="IAllBenchmarks.cs" />
     <Compile Include="IRanges.cs" />
+    <Compile Include="StructuresToStaticGenericMethodsByInterfaces\Consumer\Range.cs" />
+    <Compile Include="StructuresToStaticGenericMethodsByInterfaces\Consumer\Ranges.cs" />
+    <Compile Include="StructuresToStaticGenericMethodsByInterfaces\Library\IRange.cs" />
+    <Compile Include="StructuresToStaticGenericMethodsByInterfaces\Library\IRanges.cs" />
+    <Compile Include="StructuresToStaticGenericMethodsByInterfaces\Library\RangeOperations.cs" />
     <Compile Include="RandomRanges.cs" />
     <Compile Include="RangeIntersectionBenchmark.cs" />
     <Compile Include="IRange.cs" />
