@@ -145,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BenchmarkConfig.cs" />
+    <Compile Include="DurableGenericsBenchmark.cs" />
+    <Compile Include="DurableGenerics\Consumer\Range.cs" />
+    <Compile Include="DurableGenerics\Consumer\Ranges.cs" />
+    <Compile Include="DurableGenerics\Library\IRange.cs" />
+    <Compile Include="DurableGenerics\Library\IRanges.cs" />
+    <Compile Include="DurableGenerics\Library\RangeOperations.cs" />
     <Compile Include="Legacy\LogicPackaging\BaseConfig.cs" />
     <Compile Include="Legacy\LogicPackaging\Consumer\ConsumerStructureWithClass.cs" />
     <Compile Include="Legacy\LogicPackaging\Consumer\ConsumerStructureWithGenericData.cs" />

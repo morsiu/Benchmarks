@@ -8,7 +8,7 @@ namespace LibraryInterfacePerformance
     {
         public static void Main(string[] args)
         {
-            BenchmarkRunner.Run<TransientClassesBenchmark>();
+            BenchmarkRunner.Run<DurableGenericsBenchmark>();
         }
     }
 }
