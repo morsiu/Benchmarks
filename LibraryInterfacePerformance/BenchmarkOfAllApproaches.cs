@@ -9,7 +9,7 @@ namespace LibraryInterfacePerformance
     {
         private IAllBenchmarks _allBenchmarks;
         
-        [Params("DurableGenerics", "MutableGenerics", "StaticMethods", "StaticMethodsUsingStructures", "TransientClasses", "TransientStructures")]
+        [Params("GenericsAndInterfacesRef", "GenericsAndInterfacesRefAndReturn", "IntermediatePlainValues", "AggregatedStructure", "IntermediateClass", "IntermediateStructure")]
         public string ApproachName { get; set; }
 
         public const int Count = 1_000_000;
@@ -36,22 +36,22 @@ namespace LibraryInterfacePerformance
         {
             switch (approachName)
             {
-                case "DurableGenerics":
+                case "GenericsAndInterfacesRef":
                     return new BenchmarkOfAnApproach<Range<int>, Ranges<int>>(
                         rangeCount, new Ranges<int>());
-                case "MutableGenerics":
+                case "GenericsAndInterfacesRefAndReturn":
                     return new BenchmarkOfAnApproach<GenericsAndInterfacesRefAndReturn.Consumer.Range<int>, GenericsAndInterfacesRefAndReturn.Consumer.Ranges<int>>(
                         rangeCount, new GenericsAndInterfacesRefAndReturn.Consumer.Ranges<int>());
-                case "StaticMethods":
+                case "IntermediatePlainValues":
                     return new BenchmarkOfAnApproach<IntermediatePlainValues.Consumer.Range<int>, IntermediatePlainValues.Consumer.Ranges<int>>(
                         rangeCount, new IntermediatePlainValues.Consumer.Ranges<int>());
-                case "StaticMethodsUsingStructures":
+                case "AggregatedStructure":
                     return new BenchmarkOfAnApproach<AggregatedStructure.Consumer.Range<int>, AggregatedStructure.Consumer.Ranges<int>>(
                         rangeCount, new AggregatedStructure.Consumer.Ranges<int>());
-                case "TransientClasses":
+                case "IntermediateClass":
                     return new BenchmarkOfAnApproach<IntermediateClass.Consumer.Range<int>, IntermediateClass.Consumer.Ranges<int>>(
                         rangeCount, new IntermediateClass.Consumer.Ranges<int>());
-                case "TransientStructures": 
+                case "IntermediateStructure": 
                     return new BenchmarkOfAnApproach<IntermediateStructure.Consumer.Range<int>, IntermediateStructure.Consumer.Ranges<int>>(
                         rangeCount, new IntermediateStructure.Consumer.Ranges<int>());
                 default : throw new ArgumentOutOfRangeException(nameof(approachName), approachName, "Uknown approach");
