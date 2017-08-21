@@ -144,6 +144,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregatedStructure\Consumer\Range.cs" />
+    <Compile Include="AggregatedStructure\Consumer\Ranges.cs" />
+    <Compile Include="AggregatedStructure\Library\Range.cs" />
     <Compile Include="BenchmarkOfAllApproaches.cs" />
     <Compile Include="BenchmarkConfig.cs" />
     <Compile Include="DoRangesIntersectBenchmark.cs" />
