@@ -165,10 +165,10 @@
     <Compile Include="IRange.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AggregatedStructure\Consumer\Range.cs" />
-    <Compile Include="AggregatedStructure\Consumer\Ranges.cs" />
-    <Compile Include="AggregatedStructure\Library\Range.cs" />
-    <Compile Include="AggregatedStructure\Library\RangeOperations.cs" />
+    <Compile Include="AggregatedStructureRef\Consumer\Range.cs" />
+    <Compile Include="AggregatedStructureRef\Consumer\Ranges.cs" />
+    <Compile Include="AggregatedStructureRef\Library\Range.cs" />
+    <Compile Include="AggregatedStructureRef\Library\RangeOperations.cs" />
     <Compile Include="IntermediatePlainValues\Consumer\Range.cs" />
     <Compile Include="IntermediatePlainValues\Consumer\Ranges.cs" />
     <Compile Include="IntermediatePlainValues\Library\RangeOperations.cs" />

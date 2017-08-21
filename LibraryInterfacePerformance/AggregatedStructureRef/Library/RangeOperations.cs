@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibraryInterfacePerformance.AggregatedStructure.Library
+namespace LibraryInterfacePerformance.AggregatedStructureRef.Library
 {
     public static class RangeOperations
     {

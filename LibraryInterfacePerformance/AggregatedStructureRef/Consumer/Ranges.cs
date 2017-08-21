@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibraryInterfacePerformance.AggregatedStructure.Consumer
+namespace LibraryInterfacePerformance.AggregatedStructureRef.Consumer
 {
     public struct Ranges<T> : IRanges<T, Range<T>>
         where T : IComparable<T>

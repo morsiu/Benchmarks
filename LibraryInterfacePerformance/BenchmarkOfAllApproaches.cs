@@ -10,13 +10,13 @@ namespace LibraryInterfacePerformance
         private const string GenericsAndInterfacesRef = "GenericsAndInterfacesRef";
         private const string GenericsAndInterfacesRefAndReturn = "GenericsAndInterfacesRefAndReturn";
         private const string IntermediatePlainValues = "IntermediatePlainValues";
-        private const string AggregatedStructure = "AggregatedStructure";
+        private const string AggregatedStructureRef = "AggregatedStructureRef";
         private const string IntermediateClass = "IntermediateClass";
         private const string IntermediateStructure = "IntermediateStructure";
 
         private IAllBenchmarks _allBenchmarks;
         
-        [Params(GenericsAndInterfacesRef, GenericsAndInterfacesRefAndReturn, IntermediatePlainValues, AggregatedStructure, IntermediateClass, IntermediateStructure)]
+        [Params(GenericsAndInterfacesRef, GenericsAndInterfacesRefAndReturn, IntermediatePlainValues, AggregatedStructureRef, IntermediateClass, IntermediateStructure)]
         public string ApproachName { get; set; }
 
         public const int Count = 1_000_000;
@@ -52,9 +52,9 @@ namespace LibraryInterfacePerformance
                 case IntermediatePlainValues:
                     return new BenchmarkOfAnApproach<IntermediatePlainValues.Consumer.Range<int>, IntermediatePlainValues.Consumer.Ranges<int>>(
                         rangeCount, new IntermediatePlainValues.Consumer.Ranges<int>());
-                case AggregatedStructure:
-                    return new BenchmarkOfAnApproach<AggregatedStructure.Consumer.Range<int>, AggregatedStructure.Consumer.Ranges<int>>(
-                        rangeCount, new AggregatedStructure.Consumer.Ranges<int>());
+                case AggregatedStructureRef:
+                    return new BenchmarkOfAnApproach<AggregatedStructureRef.Consumer.Range<int>, AggregatedStructureRef.Consumer.Ranges<int>>(
+                        rangeCount, new AggregatedStructureRef.Consumer.Ranges<int>());
                 case IntermediateClass:
                     return new BenchmarkOfAnApproach<IntermediateClass.Consumer.Range<int>, IntermediateClass.Consumer.Ranges<int>>(
                         rangeCount, new IntermediateClass.Consumer.Ranges<int>());
