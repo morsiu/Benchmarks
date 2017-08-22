@@ -144,6 +144,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregatedStructureRefAndReturn\Consumer\Range.cs" />
+    <Compile Include="AggregatedStructureRefAndReturn\Consumer\Ranges.cs" />
+    <Compile Include="AggregatedStructureRefAndReturn\Library\Range.cs" />
+    <Compile Include="AggregatedStructureRefAndReturn\Library\RangeOperations.cs" />
     <Compile Include="AggregatedStructure\Consumer\Range.cs" />
     <Compile Include="AggregatedStructure\Consumer\Ranges.cs" />
     <Compile Include="AggregatedStructure\Library\Range.cs" />
