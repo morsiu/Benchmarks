@@ -7,18 +7,28 @@ namespace LibraryInterfacePerformance
     [Config(typeof(BenchmarkConfig))]
     public class BenchmarkOfAllApproaches
     {
-        private const string GenericsAndInterfacesRef = "GenericsAndInterfacesRef";
-        private const string GenericsAndInterfacesRefAndReturn = "GenericsAndInterfacesRefAndReturn";
-        private const string IntermediatePlainValues = "IntermediatePlainValues";
         private const string AggregatedStructure = "AggregatedStructure";
         private const string AggregatedStructureRef = "AggregatedStructureRef";
         private const string AggregatedStructureRefAndReturn = "AggregatedStructureRefAndReturn";
+        private const string GenericsAndInterfacesRef = "GenericsAndInterfacesRef";
+        private const string GenericsAndInterfacesRefAndReturn = "GenericsAndInterfacesRefAndReturn";
+        private const string GenericsAndInterfacesRefRangesDefault = "GenericsAndInterfacesRefRangesDefault";
+        private const string IntermediatePlainValues = "IntermediatePlainValues";
         private const string IntermediateClass = "IntermediateClass";
         private const string IntermediateStructure = "IntermediateStructure";
 
         private IAllBenchmarks _allBenchmarks;
         
-        [Params(GenericsAndInterfacesRef, GenericsAndInterfacesRefAndReturn, IntermediatePlainValues, AggregatedStructure, AggregatedStructureRef, AggregatedStructureRefAndReturn, IntermediateClass, IntermediateStructure)]
+        [Params(
+            AggregatedStructure,
+            AggregatedStructureRef,
+            AggregatedStructureRefAndReturn,
+            GenericsAndInterfacesRef,
+            GenericsAndInterfacesRefAndReturn,
+            GenericsAndInterfacesRefRangesDefault,
+            IntermediateClass,
+            IntermediatePlainValues,
+            IntermediateStructure)]
         public string ApproachName { get; set; }
 
         public const int Count = 1_000_000;
