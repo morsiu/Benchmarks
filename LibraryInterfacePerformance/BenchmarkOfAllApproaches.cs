@@ -55,15 +55,6 @@ namespace LibraryInterfacePerformance
         {
             switch (approachName)
             {
-                case GenericsAndInterfacesRef:
-                    return new BenchmarkOfAnApproach<GenericsAndInterfacesRef.Consumer.Range<int>, GenericsAndInterfacesRef.Consumer.Ranges<int>>(
-                        rangeCount, new GenericsAndInterfacesRef.Consumer.Ranges<int>());
-                case GenericsAndInterfacesRefAndReturn:
-                    return new BenchmarkOfAnApproach<Range<int>, Ranges<int>>(
-                        rangeCount, new Ranges<int>());
-                case IntermediatePlainValues:
-                    return new BenchmarkOfAnApproach<IntermediatePlainValues.Consumer.Range<int>, IntermediatePlainValues.Consumer.Ranges<int>>(
-                        rangeCount, new IntermediatePlainValues.Consumer.Ranges<int>());
                 case AggregatedStructure:
                     return new BenchmarkOfAnApproach<AggregatedStructure.Consumer.Range<int>, AggregatedStructure.Consumer.Ranges<int>>(
                         rangeCount, new AggregatedStructure.Consumer.Ranges<int>());
@@ -73,9 +64,21 @@ namespace LibraryInterfacePerformance
                 case AggregatedStructureRefAndReturn:
                     return new BenchmarkOfAnApproach<AggregatedStructureRefAndReturn.Consumer.Range<int>, AggregatedStructureRefAndReturn.Consumer.Ranges<int>>(
                         rangeCount, new AggregatedStructureRefAndReturn.Consumer.Ranges<int>());
+                case GenericsAndInterfacesRef:
+                    return new BenchmarkOfAnApproach<GenericsAndInterfacesRef.Consumer.Range<int>, GenericsAndInterfacesRef.Consumer.Ranges<int>>(
+                        rangeCount, new GenericsAndInterfacesRef.Consumer.Ranges<int>());
+                case GenericsAndInterfacesRefAndReturn:
+                    return new BenchmarkOfAnApproach<Range<int>, Ranges<int>>(
+                        rangeCount, new Ranges<int>());
+                case GenericsAndInterfacesRefRangesDefault:
+                    return new BenchmarkOfAnApproach<GenericsAndInterfacesRefRangesDefault.Consumer.Range<int>, GenericsAndInterfacesRefRangesDefault.Consumer.Ranges<int>>(
+                        rangeCount, new GenericsAndInterfacesRefRangesDefault.Consumer.Ranges<int>());
                 case IntermediateClass:
                     return new BenchmarkOfAnApproach<IntermediateClass.Consumer.Range<int>, IntermediateClass.Consumer.Ranges<int>>(
                         rangeCount, new IntermediateClass.Consumer.Ranges<int>());
+                case IntermediatePlainValues:
+                    return new BenchmarkOfAnApproach<IntermediatePlainValues.Consumer.Range<int>, IntermediatePlainValues.Consumer.Ranges<int>>(
+                        rangeCount, new IntermediatePlainValues.Consumer.Ranges<int>());
                 case IntermediateStructure: 
                     return new BenchmarkOfAnApproach<IntermediateStructure.Consumer.Range<int>, IntermediateStructure.Consumer.Ranges<int>>(
                         rangeCount, new IntermediateStructure.Consumer.Ranges<int>());
