@@ -4,18 +4,18 @@ namespace LibraryInterfacePerformance.GenericsAndInterfacesRefAndReturn.Library
 {
     public static class RangeOperations
     {
-        public static bool Intersect<T, TRange, TRanges>(ref TRange left, ref TRange right, ref TRange result, TRanges ranges)
+        public static TRange Intersect<T, TRange, TRanges>(ref TRange left, ref TRange right, TRanges ranges)
             where T : IComparable<T>
             where TRange : IRange<T>
             where TRanges : IRanges<T, TRange>
         {
             if (!IntersectsWith<T, TRange>(ref left, ref right))
             {
-                return false;
+                return ranges.EmptyRange();
             }
             var startToRightStart = left.Start.CompareTo(right.Start);
             var endToRightEnd = left.End.CompareTo(right.End);
-            result = 
+            return
                 ranges.Range(
                     startToRightStart > 0 ? left.Start : right.Start,
                     startToRightStart == 0
@@ -29,7 +29,6 @@ namespace LibraryInterfacePerformance.GenericsAndInterfacesRefAndReturn.Library
                         : endToRightEnd < 0
                             ? left.OpenEnd
                             : right.OpenEnd);
-            return true;
         }
 
         public static bool IntersectsWith<T, TRange>(ref TRange left, ref TRange right)

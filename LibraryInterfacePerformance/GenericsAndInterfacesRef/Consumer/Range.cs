@@ -27,8 +27,13 @@ namespace LibraryInterfacePerformance.GenericsAndInterfacesRef.Consumer
         public bool IntersectsWith(Range<T> other) =>
             RangeOperations.IntersectsWith<T, Range<T>>(ref this, ref other);
 
-        public Range<T> Intersect(Range<T> other) =>
-            RangeOperations.Intersect<T, Range<T>, Ranges<T>>(ref this, ref other, new Ranges<T>());
+        public Range<T> Intersect(Range<T> other)
+        {
+            var result = default(Range<T>);
+            return RangeOperations.Intersect<T, Range<T>, Ranges<T>>(ref this, ref other, ref result, new Ranges<T>())
+                ? result
+                : new Range<T>();
+        }
 
         [Flags]
         private enum State : byte

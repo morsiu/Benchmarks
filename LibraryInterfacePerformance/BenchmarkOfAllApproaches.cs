@@ -1,6 +1,6 @@
 ﻿using System;
 using BenchmarkDotNet.Attributes;
-using LibraryInterfacePerformance.GenericsAndInterfacesRef.Consumer;
+using LibraryInterfacePerformance.GenericsAndInterfacesRefAndReturn.Consumer;
 
 namespace LibraryInterfacePerformance
 {
@@ -45,11 +45,11 @@ namespace LibraryInterfacePerformance
             switch (approachName)
             {
                 case GenericsAndInterfacesRef:
+                    return new BenchmarkOfAnApproach<GenericsAndInterfacesRef.Consumer.Range<int>, GenericsAndInterfacesRef.Consumer.Ranges<int>>(
+                        rangeCount, new GenericsAndInterfacesRef.Consumer.Ranges<int>());
+                case GenericsAndInterfacesRefAndReturn:
                     return new BenchmarkOfAnApproach<Range<int>, Ranges<int>>(
                         rangeCount, new Ranges<int>());
-                case GenericsAndInterfacesRefAndReturn:
-                    return new BenchmarkOfAnApproach<GenericsAndInterfacesRefAndReturn.Consumer.Range<int>, GenericsAndInterfacesRefAndReturn.Consumer.Ranges<int>>(
-                        rangeCount, new GenericsAndInterfacesRefAndReturn.Consumer.Ranges<int>());
                 case IntermediatePlainValues:
                     return new BenchmarkOfAnApproach<IntermediatePlainValues.Consumer.Range<int>, IntermediatePlainValues.Consumer.Ranges<int>>(
                         rangeCount, new IntermediatePlainValues.Consumer.Ranges<int>());

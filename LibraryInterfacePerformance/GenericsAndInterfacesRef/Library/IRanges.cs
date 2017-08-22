@@ -2,7 +2,7 @@
 
 namespace LibraryInterfacePerformance.GenericsAndInterfacesRef.Library
 {
-    public interface IRanges<T, TRange>
+    public interface IRanges<in T, out TRange>
         where T : IComparable<T>
         where TRange : IRange<T>
     {
