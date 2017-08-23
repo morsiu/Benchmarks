@@ -21,16 +21,16 @@ namespace LibraryInterfacePerformance
         private IAllBenchmarks _allBenchmarks;
         
         [Params(
-//            AggregatedStructure,
-//            AggregatedStructureRef,
-//            AggregatedStructureRefAndReturn,
+            AggregatedStructure,
+            AggregatedStructureRef,
+            AggregatedStructureRefAndReturn,
             GenericsAndInterfaces,
             GenericsAndInterfacesRef,
             GenericsAndInterfacesRefAndReturn,
-            GenericsAndInterfacesRefRangesDefault)]
-//            IntermediateClass,
-//            IntermediatePlainValues,
-//            IntermediateStructure)]
+            GenericsAndInterfacesRefRangesDefault,
+            IntermediateClass,
+            IntermediatePlainValues,
+            IntermediateStructure)]
         public string ApproachName { get; set; }
 
         public const int Count = 1_000_000;
