@@ -165,6 +165,11 @@
     <Compile Include="GenericsAndInterfacesRefRangesDefault\Library\IRange.cs" />
     <Compile Include="GenericsAndInterfacesRefRangesDefault\Library\IRanges.cs" />
     <Compile Include="GenericsAndInterfacesRefRangesDefault\Library\RangeOperations.cs" />
+    <Compile Include="GenericsAndInterfaces\Consumer\Range.cs" />
+    <Compile Include="GenericsAndInterfaces\Consumer\Ranges.cs" />
+    <Compile Include="GenericsAndInterfaces\Library\IRange.cs" />
+    <Compile Include="GenericsAndInterfaces\Library\IRanges.cs" />
+    <Compile Include="GenericsAndInterfaces\Library\RangeOperations.cs" />
     <Compile Include="IAllBenchmarks.cs" />
     <Compile Include="IRanges.cs" />
     <Compile Include="GenericsAndInterfacesRef\Consumer\Range.cs" />

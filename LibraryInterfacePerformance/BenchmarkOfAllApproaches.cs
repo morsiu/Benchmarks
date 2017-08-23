@@ -10,6 +10,7 @@ namespace LibraryInterfacePerformance
         private const string AggregatedStructure = "AggregatedStructure";
         private const string AggregatedStructureRef = "AggregatedStructureRef";
         private const string AggregatedStructureRefAndReturn = "AggregatedStructureRefAndReturn";
+        private const string GenericsAndInterfaces = "GenericsAndInterfaces";
         private const string GenericsAndInterfacesRef = "GenericsAndInterfacesRef";
         private const string GenericsAndInterfacesRefAndReturn = "GenericsAndInterfacesRefAndReturn";
         private const string GenericsAndInterfacesRefRangesDefault = "GenericsAndInterfacesRefRangesDefault";
@@ -20,15 +21,16 @@ namespace LibraryInterfacePerformance
         private IAllBenchmarks _allBenchmarks;
         
         [Params(
-            AggregatedStructure,
-            AggregatedStructureRef,
-            AggregatedStructureRefAndReturn,
+//            AggregatedStructure,
+//            AggregatedStructureRef,
+//            AggregatedStructureRefAndReturn,
+            GenericsAndInterfaces,
             GenericsAndInterfacesRef,
             GenericsAndInterfacesRefAndReturn,
-            GenericsAndInterfacesRefRangesDefault,
-            IntermediateClass,
-            IntermediatePlainValues,
-            IntermediateStructure)]
+            GenericsAndInterfacesRefRangesDefault)]
+//            IntermediateClass,
+//            IntermediatePlainValues,
+//            IntermediateStructure)]
         public string ApproachName { get; set; }
 
         public const int Count = 1_000_000;
@@ -64,6 +66,9 @@ namespace LibraryInterfacePerformance
                 case AggregatedStructureRefAndReturn:
                     return new BenchmarkOfAnApproach<AggregatedStructureRefAndReturn.Consumer.Range<int>, AggregatedStructureRefAndReturn.Consumer.Ranges<int>>(
                         rangeCount, new AggregatedStructureRefAndReturn.Consumer.Ranges<int>());
+                case GenericsAndInterfaces:
+                    return new BenchmarkOfAnApproach<GenericsAndInterfaces.Consumer.Range<int>, GenericsAndInterfaces.Consumer.Ranges<int>>(
+                        rangeCount, new GenericsAndInterfaces.Consumer.Ranges<int>());
                 case GenericsAndInterfacesRef:
                     return new BenchmarkOfAnApproach<GenericsAndInterfacesRef.Consumer.Range<int>, GenericsAndInterfacesRef.Consumer.Ranges<int>>(
                         rangeCount, new GenericsAndInterfacesRef.Consumer.Ranges<int>());
