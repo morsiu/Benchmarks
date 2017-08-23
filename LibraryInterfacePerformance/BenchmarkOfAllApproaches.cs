@@ -1,6 +1,6 @@
 ﻿using System;
 using BenchmarkDotNet.Attributes;
-using LibraryInterfacePerformance.GenericsAndInterfacesRefAndReturn.Consumer;
+using LibraryInterfacePerformance.InterfacedStructureInByRef.Consumer;
 
 namespace LibraryInterfacePerformance
 {
@@ -8,12 +8,12 @@ namespace LibraryInterfacePerformance
     public class BenchmarkOfAllApproaches
     {
         private const string AggregatedStructure = "AggregatedStructure";
-        private const string AggregatedStructureRef = "AggregatedStructureRef";
-        private const string AggregatedStructureRefAndReturn = "AggregatedStructureRefAndReturn";
-        private const string GenericsAndInterfaces = "GenericsAndInterfaces";
-        private const string GenericsAndInterfacesRef = "GenericsAndInterfacesRef";
-        private const string GenericsAndInterfacesRefAndReturn = "GenericsAndInterfacesRefAndReturn";
-        private const string GenericsAndInterfacesRefRangesDefault = "GenericsAndInterfacesRefRangesDefault";
+        private const string AggregatedStructureAllByRef = "AggregatedStructureAllByRef";
+        private const string AggregatedStructureInByRef = "AggregatedStructureInByRef";
+        private const string InterfacedClass = "InterfacedClass";
+        private const string InterfacedStructure = "InterfacedStructure";
+        private const string InterfacedStructureAllByRef = "InterfacedStructureAllByRef";
+        private const string InterfacedStructuresInByRef = "InterfacedStructuresInByRef";
         private const string IntermediatePlainValues = "IntermediatePlainValues";
         private const string IntermediateClass = "IntermediateClass";
         private const string IntermediateStructure = "IntermediateStructure";
@@ -22,12 +22,11 @@ namespace LibraryInterfacePerformance
         
         [Params(
             AggregatedStructure,
-            AggregatedStructureRef,
-            AggregatedStructureRefAndReturn,
-            GenericsAndInterfaces,
-            GenericsAndInterfacesRef,
-            GenericsAndInterfacesRefAndReturn,
-            GenericsAndInterfacesRefRangesDefault,
+            AggregatedStructureAllByRef,
+            AggregatedStructureInByRef,
+            InterfacedClass,
+            InterfacedStructureAllByRef,
+            InterfacedStructuresInByRef,
             IntermediateClass,
             IntermediatePlainValues,
             IntermediateStructure)]
@@ -60,24 +59,24 @@ namespace LibraryInterfacePerformance
                 case AggregatedStructure:
                     return new BenchmarkOfAnApproach<AggregatedStructure.Consumer.Range<int>, AggregatedStructure.Consumer.Ranges<int>>(
                         rangeCount, new AggregatedStructure.Consumer.Ranges<int>());
-                case AggregatedStructureRef:
-                    return new BenchmarkOfAnApproach<AggregatedStructureRef.Consumer.Range<int>, AggregatedStructureRef.Consumer.Ranges<int>>(
-                        rangeCount, new AggregatedStructureRef.Consumer.Ranges<int>());
-                case AggregatedStructureRefAndReturn:
-                    return new BenchmarkOfAnApproach<AggregatedStructureRefAndReturn.Consumer.Range<int>, AggregatedStructureRefAndReturn.Consumer.Ranges<int>>(
-                        rangeCount, new AggregatedStructureRefAndReturn.Consumer.Ranges<int>());
-                case GenericsAndInterfaces:
-                    return new BenchmarkOfAnApproach<GenericsAndInterfaces.Consumer.Range<int>, GenericsAndInterfaces.Consumer.Ranges<int>>(
-                        rangeCount, new GenericsAndInterfaces.Consumer.Ranges<int>());
-                case GenericsAndInterfacesRef:
-                    return new BenchmarkOfAnApproach<GenericsAndInterfacesRef.Consumer.Range<int>, GenericsAndInterfacesRef.Consumer.Ranges<int>>(
-                        rangeCount, new GenericsAndInterfacesRef.Consumer.Ranges<int>());
-                case GenericsAndInterfacesRefAndReturn:
+                case AggregatedStructureAllByRef:
+                    return new BenchmarkOfAnApproach<AggregatedStructureAllByRef.Consumer.Range<int>, AggregatedStructureAllByRef.Consumer.Ranges<int>>(
+                        rangeCount, new AggregatedStructureAllByRef.Consumer.Ranges<int>());
+                case AggregatedStructureInByRef:
+                    return new BenchmarkOfAnApproach<AggregatedStructureInByRef.Consumer.Range<int>, AggregatedStructureInByRef.Consumer.Ranges<int>>(
+                        rangeCount, new AggregatedStructureInByRef.Consumer.Ranges<int>());
+                case InterfacedClass:
+                    return new BenchmarkOfAnApproach<InterfacedClass.Consumer.Range<int>, InterfacedClass.Consumer.Ranges<int>>(
+                        rangeCount, new InterfacedClass.Consumer.Ranges<int>());
+                case InterfacedStructure:
+                    return new BenchmarkOfAnApproach<InterfacedStructure.Consumer.Range<int>, InterfacedStructure.Consumer.Ranges<int>>(
+                        rangeCount, new InterfacedStructure.Consumer.Ranges<int>());
+                case InterfacedStructureAllByRef:
+                    return new BenchmarkOfAnApproach<InterfacedStructureAllByRef.Consumer.Range<int>, InterfacedStructureAllByRef.Consumer.Ranges<int>>(
+                        rangeCount, new InterfacedStructureAllByRef.Consumer.Ranges<int>());
+                case InterfacedStructuresInByRef:
                     return new BenchmarkOfAnApproach<Range<int>, Ranges<int>>(
                         rangeCount, new Ranges<int>());
-                case GenericsAndInterfacesRefRangesDefault:
-                    return new BenchmarkOfAnApproach<GenericsAndInterfacesRefRangesDefault.Consumer.Range<int>, GenericsAndInterfacesRefRangesDefault.Consumer.Ranges<int>>(
-                        rangeCount, new GenericsAndInterfacesRefRangesDefault.Consumer.Ranges<int>());
                 case IntermediateClass:
                     return new BenchmarkOfAnApproach<IntermediateClass.Consumer.Range<int>, IntermediateClass.Consumer.Ranges<int>>(
                         rangeCount, new IntermediateClass.Consumer.Ranges<int>());
