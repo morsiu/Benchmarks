@@ -32,7 +32,7 @@ namespace LibraryInterfacePerformance
             IntermediateStructure)]
         public string ApproachName { get; set; }
 
-        public const int Count = 1_000_000;
+        public const int Count = 1_000_000_000;
 
         [GlobalSetup]
         public void GlobalSetup()

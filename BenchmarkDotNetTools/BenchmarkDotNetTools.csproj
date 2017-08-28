@@ -58,6 +58,7 @@
     <Compile Include="Columns\ColumnName.cs" />
     <Compile Include="Columns\LowerValueCase.cs" />
     <Compile Include="Columns\SingularizeValue.cs" />
+    <Compile Include="Filters\ParameterFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
