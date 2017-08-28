@@ -7,16 +7,16 @@ namespace LibraryInterfacePerformance
     [Config(typeof(BenchmarkConfig))]
     public class BenchmarkOfAllApproaches
     {
-        private const string AggregatedStructure = "AggregatedStructure";
-        private const string AggregatedStructureAllByRef = "AggregatedStructureAllByRef";
-        private const string AggregatedStructureInByRef = "AggregatedStructureInByRef";
-        private const string InterfacedClass = "InterfacedClass";
-        private const string InterfacedStructure = "InterfacedStructure";
-        private const string InterfacedStructureAllByRef = "InterfacedStructureAllByRef";
-        private const string InterfacedStructuresInByRef = "InterfacedStructuresInByRef";
-        private const string IntermediatePlainValues = "IntermediatePlainValues";
-        private const string IntermediateClass = "IntermediateClass";
-        private const string IntermediateStructure = "IntermediateStructure";
+        internal const string AggregatedStructure = "AggregatedStructure";
+        internal const string AggregatedStructureAllByRef = "AggregatedStructureAllByRef";
+        internal const string AggregatedStructureInByRef = "AggregatedStructureInByRef";
+        internal const string InterfacedClass = "InterfacedClass";
+        internal const string InterfacedStructure = "InterfacedStructure";
+        internal const string InterfacedStructureAllByRef = "InterfacedStructureAllByRef";
+        internal const string InterfacedStructuresInByRef = "InterfacedStructuresInByRef";
+        internal const string IntermediatePlainValues = "IntermediatePlainValues";
+        internal const string IntermediateClass = "IntermediateClass";
+        internal const string IntermediateStructure = "IntermediateStructure";
 
         private IAllBenchmarks _allBenchmarks;
         
@@ -32,7 +32,7 @@ namespace LibraryInterfacePerformance
             IntermediateStructure)]
         public string ApproachName { get; set; }
 
-        public const int Count = 1_000_000_000;
+        public const int Count = 1_000_000;
 
         [GlobalSetup]
         public void GlobalSetup()
