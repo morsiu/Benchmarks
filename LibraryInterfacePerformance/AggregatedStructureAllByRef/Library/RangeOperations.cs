@@ -4,15 +4,16 @@ namespace LibraryInterfacePerformance.AggregatedStructureAllByRef.Library
 {
     public static class RangeOperations
     {
-        public static bool Intersect<T>(
+        public static void Intersect<T>(
             ref Range<T> left,
             ref Range<T> right,
-            ref Range<T> result)
+            out Range<T> result)
             where T : IComparable<T>
         {
             if (!IntersectsWith(ref left, ref right))
             {
-                return false;
+                result = new Range<T>();
+                return;
             }
             var leftStartToRightStart = left.Start.CompareTo(right.Start);
             var leftEndToRightEnd = left.End.CompareTo(right.End);
@@ -30,7 +31,6 @@ namespace LibraryInterfacePerformance.AggregatedStructureAllByRef.Library
                         : leftEndToRightEnd < 0
                             ? left.OpenEnd
                             : right.OpenEnd);
-            return true;
         }
         
         public static bool IntersectsWith<T>(

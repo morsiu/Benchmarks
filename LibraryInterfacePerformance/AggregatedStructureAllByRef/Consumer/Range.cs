@@ -20,11 +20,11 @@ namespace LibraryInterfacePerformance.AggregatedStructureAllByRef.Consumer
 
         public Range<T> Intersect(Range<T> other)
         {
-            var result = new Range<T>();
+            Range<T> result;
             RangeOperations.Intersect(
                 ref _impl,
                 ref other._impl,
-                ref result._impl);
+                out result._impl);
             return result;
         }
     }

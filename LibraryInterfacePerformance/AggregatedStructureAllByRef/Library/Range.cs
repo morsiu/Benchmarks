@@ -7,7 +7,6 @@ namespace LibraryInterfacePerformance.AggregatedStructureAllByRef.Library
         public T Start { get; }
         public T End { get; }
         private readonly State _state;
-        public bool Empty => (_state & State.NonEmpty) == 0;
         public bool OpenStart => (_state & State.OpenStart) != 0;
         public bool OpenEnd => (_state & State.OpenEnd) != 0;
         
