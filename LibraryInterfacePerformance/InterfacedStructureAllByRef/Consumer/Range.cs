@@ -29,10 +29,8 @@ namespace LibraryInterfacePerformance.InterfacedStructureAllByRef.Consumer
 
         public Range<T> Intersect(Range<T> other)
         {
-            var result = default(Range<T>);
-            return RangeOperations.Intersect<T, Range<T>, Ranges<T>>(ref this, ref other, ref result)
-                ? result
-                : new Range<T>();
+            RangeOperations.Intersect<T, Range<T>, Ranges<T>>(ref this, ref other, out var result);
+            return result;
         }
 
         [Flags]
