@@ -28,7 +28,7 @@ namespace LibraryInterfacePerformance.InterfacedStructureInByRef.Consumer
             RangeOperations.IntersectsWith<T, Range<T>>(ref this, ref other);
 
         public Range<T> Intersect(Range<T> other) =>
-            RangeOperations.Intersect<T, Range<T>, Ranges<T>>(ref this, ref other, new Ranges<T>());
+            RangeOperations.Intersect<T, Range<T>, Ranges<T>>(ref this, ref other);
 
         [Flags]
         private enum State : byte

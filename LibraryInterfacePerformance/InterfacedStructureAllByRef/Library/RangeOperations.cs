@@ -4,10 +4,10 @@ namespace LibraryInterfacePerformance.InterfacedStructureAllByRef.Library
 {
     public static class RangeOperations
     {
-        public static bool Intersect<T, TRange, TRanges>(ref TRange left, ref TRange right, ref TRange result, TRanges ranges)
+        public static bool Intersect<T, TRange, TRanges>(ref TRange left, ref TRange right, ref TRange result)
             where T : IComparable<T>
             where TRange : IRange<T>
-            where TRanges : IRanges<T, TRange>
+            where TRanges : struct, IRanges<T, TRange>
         {
             if (!IntersectsWith<T, TRange>(ref left, ref right))
             {
@@ -16,7 +16,7 @@ namespace LibraryInterfacePerformance.InterfacedStructureAllByRef.Library
             var startToRightStart = left.Start.CompareTo(right.Start);
             var endToRightEnd = left.End.CompareTo(right.End);
             result = 
-                ranges.Range(
+                default(TRanges).Range(
                     startToRightStart > 0 ? left.Start : right.Start,
                     startToRightStart == 0
                         ? left.OpenStart || right.OpenStart
