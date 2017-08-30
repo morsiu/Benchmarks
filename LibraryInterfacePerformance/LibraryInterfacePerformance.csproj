@@ -148,6 +148,10 @@
     <Compile Include="AggregatedStructureInByRef\Consumer\Ranges.cs" />
     <Compile Include="AggregatedStructureInByRef\Library\Range.cs" />
     <Compile Include="AggregatedStructureInByRef\Library\RangeOperations.cs" />
+    <Compile Include="AggregatedStructureInClassAllByRef\Consumer\Range.cs" />
+    <Compile Include="AggregatedStructureInClassAllByRef\Consumer\Ranges.cs" />
+    <Compile Include="AggregatedStructureInClassAllByRef\Library\Range.cs" />
+    <Compile Include="AggregatedStructureInClassAllByRef\Library\RangeOperations.cs" />
     <Compile Include="AggregatedStructure\Consumer\Range.cs" />
     <Compile Include="AggregatedStructure\Consumer\Ranges.cs" />
     <Compile Include="AggregatedStructure\Library\Range.cs" />

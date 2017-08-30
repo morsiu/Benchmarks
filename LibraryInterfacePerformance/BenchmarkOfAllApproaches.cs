@@ -9,6 +9,7 @@ namespace LibraryInterfacePerformance
     {
         internal const string AggregatedStructure = "AggregatedStructure";
         internal const string AggregatedStructureAllByRef = "AggregatedStructureAllByRef";
+        internal const string AggregatedStructureInClassAllByRef = "AggregatedStructureInClassAllByRef";
         internal const string AggregatedStructureInByRef = "AggregatedStructureInByRef";
         internal const string InterfacedClass = "InterfacedClass";
         internal const string InterfacedStructure = "InterfacedStructure";
@@ -23,6 +24,7 @@ namespace LibraryInterfacePerformance
         [Params(
             AggregatedStructure,
             AggregatedStructureAllByRef,
+            AggregatedStructureInClassAllByRef,
             AggregatedStructureInByRef,
             InterfacedClass,
             InterfacedStructureAllByRef,
@@ -62,6 +64,9 @@ namespace LibraryInterfacePerformance
                 case AggregatedStructureAllByRef:
                     return new BenchmarkOfAnApproach<AggregatedStructureAllByRef.Consumer.Range<int>, AggregatedStructureAllByRef.Consumer.Ranges<int>>(
                         rangeCount, new AggregatedStructureAllByRef.Consumer.Ranges<int>());
+                case AggregatedStructureInClassAllByRef:
+                    return new BenchmarkOfAnApproach<AggregatedStructureInClassAllByRef.Consumer.Range<int>, AggregatedStructureInClassAllByRef.Consumer.Ranges<int>>(
+                        rangeCount, new AggregatedStructureInClassAllByRef.Consumer.Ranges<int>());
                 case AggregatedStructureInByRef:
                     return new BenchmarkOfAnApproach<AggregatedStructureInByRef.Consumer.Range<int>, AggregatedStructureInByRef.Consumer.Ranges<int>>(
                         rangeCount, new AggregatedStructureInByRef.Consumer.Ranges<int>());
