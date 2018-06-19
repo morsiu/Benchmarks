@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net47</TargetFramework>
+    <PackageProjectUrl>https://github.com/morsiu/Benchmarks</PackageProjectUrl>
+    <Copyright>Copyright © Łukasz Mrozek 2018</Copyright>
+    <Authors>Łukasz Mrozek</Authors>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.10.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BenchmarkDotNetTools\BenchmarkDotNetTools.csproj" />
+  </ItemGroup>
+</Project>

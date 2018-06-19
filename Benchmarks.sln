@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryInterfacePerformance", "LibraryInterfacePerformance\LibraryInterfacePerformance.csproj", "{92B2BDB7-8145-42C7-8912-0C8A3A9E22FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryInterfacePerformance", "LibraryInterfacePerformance\LibraryInterfacePerformance.csproj", "{92B2BDB7-8145-42C7-8912-0C8A3A9E22FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkDotNetTools", "BenchmarkDotNetTools\BenchmarkDotNetTools.csproj", "{B76760AE-F8B1-4C30-9F19-844E716549D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkDotNetTools", "BenchmarkDotNetTools\BenchmarkDotNetTools.csproj", "{B76760AE-F8B1-4C30-9F19-844E716549D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HigherOrderCodeOverhead", "HigherOrderCodeOverhead\HigherOrderCodeOverhead.csproj", "{3B08AD3F-D803-4C05-B8C5-C6DEF8458A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HigherOrderCodeOverhead", "HigherOrderCodeOverhead\HigherOrderCodeOverhead.csproj", "{3B08AD3F-D803-4C05-B8C5-C6DEF8458A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EqualityCheckPerformance", "EqualityCheckPerformance\EqualityCheckPerformance.csproj", "{2F2534DB-FE39-4A1E-9134-B7E3C000BCD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EqualityCheckPerformance", "EqualityCheckPerformance\EqualityCheckPerformance.csproj", "{2F2534DB-FE39-4A1E-9134-B7E3C000BCD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericParameterPolymorphism", "GenericParameterPolymorphism\GenericParameterPolymorphism.csproj", "{B14F7F71-1518-4D85-BEE8-E0FB64264A32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{2F2534DB-FE39-4A1E-9134-B7E3C000BCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F2534DB-FE39-4A1E-9134-B7E3C000BCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F2534DB-FE39-4A1E-9134-B7E3C000BCD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B14F7F71-1518-4D85-BEE8-E0FB64264A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B14F7F71-1518-4D85-BEE8-E0FB64264A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B14F7F71-1518-4D85-BEE8-E0FB64264A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B14F7F71-1518-4D85-BEE8-E0FB64264A32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23394BDB-A8E2-4E08-A93C-E253764C38D7}
 	EndGlobalSection
 EndGlobal
